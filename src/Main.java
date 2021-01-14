@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        int n = 2;
+        int n = 200;
         CompanyRepo companyRepo = new CompanyRepo(n);
 
 
@@ -28,5 +28,19 @@ public class Main {
         companyRepo.add(c3);
         // wyświetlenie wszystkich firm
         companyRepo.displayAll();
+
+        System.out.println("----------- poszukiwanie firmy po nipie---------------");
+        Company company = companyRepo.findCompany(1118887771);
+        company.display();
+
+        System.out.println("----------- poszukiwanie firmy po nipie---------------");
+        company = companyRepo.findCompany(1218887771);
+        if(company != null){
+
+            company.display();
+
+        }else{
+            System.out.println("Not find");
+        }
     }
 }
