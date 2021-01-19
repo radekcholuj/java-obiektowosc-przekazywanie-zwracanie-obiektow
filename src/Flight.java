@@ -1,17 +1,19 @@
 public class Flight {
     int timeOfArrival;
     int departureTime;
-    Planes planeId;
+    Plane plane;
 
-    public Flight(int timeOfArrival, int departureTime, Planes planeId) {
+    public Flight(){}
+
+    public Flight(int timeOfArrival, int departureTime, Plane plane) {
         this.timeOfArrival = timeOfArrival;
         this.departureTime = departureTime;
-        this.planeId = planeId;
+        this.plane = plane;
     }
 
     void displayDetail(){
         System.out.println("arrival: " + timeOfArrival);
         System.out.println("departure: " + departureTime);
-        planeId.displayPlaneInfo();
+        plane.displayPlaneInfo();
     }
 }

@@ -9,9 +9,9 @@ public class FlightsTable {
     void addFlight(Flight flight) {
         boolean duplicatOfPlane = false;
         boolean duplicatOfArrival = false;
-        for(Flight fl : flightArray){
-            if(fl != null ){
-                if(fl.planeId.equals(flight.planeId) && fl.timeOfArrival == fl.timeOfArrival){
+        for (Flight fl : flightArray) {
+            if (fl != null) {
+                if (fl.plane.equals(flight.plane) && fl.timeOfArrival == fl.timeOfArrival) {
                     System.out.println("Taki lot jest niedostępny");
                     flight.displayDetail();
                     duplicatOfPlane = true;
@@ -31,5 +31,15 @@ public class FlightsTable {
             flightArray[i].displayDetail();
             System.out.println("--------------");
         }
+    }
+
+    Flight findFlightByPlaneId(int id) {
+        Flight flight = new Flight();
+        for (int i = 0; i < flightArray.length && flightArray[i] != null; i++) {
+            if(flightArray[i].plane.id == id){
+                flight = flightArray[i];
+            }
+        }
+        return flight;
     }
 }
